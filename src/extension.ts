@@ -50,7 +50,6 @@ export function activate(context: vscode.ExtensionContext) {
     const s = stats.snapshot;
     status.text = `$(heart) 💧 ${s.sweat.toLocaleString()}  🩸 ${s.blood}  ⌨️ ${s.code}/${s.goal}`;
     status.tooltip = `Blood, Sweat and Code (today)\nSweat: ${s.sweat} keystrokes\nBlood: ${s.blood} bugs squashed\nCode: ${s.code} of ${s.goal} lines`;
-    status.color = "#c9a7ff";
     status.show();
   }
   updateStatus();
