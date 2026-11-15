@@ -9,6 +9,7 @@
   "engines": {
     "vscode": "^1.84.0"
   },
+  "repository": { "type": "git", "url": "https://github.com/tipandtale/blood-sweat-and-code.git" },
   "categories": [
     "Other"
   ],
