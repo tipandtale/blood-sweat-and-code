@@ -2,7 +2,7 @@
   "name": "blood-sweat-and-code",
   "displayName": "Blood, Sweat and Code",
   "description": "A cheerful pastel-purple coding companion for ARMY. Track sweat (keystrokes), blood (bugs squashed) and code (lines), with pixel hearts, a 7 burst, BTS sounds, and easter eggs. Fan-made by @tipandtale. Not affiliated with HYBE or BTS.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "tipandtale",
   "icon": "media/icon.png",
   "license": "MIT",
@@ -185,3 +185,4 @@
     "pastel"
   ]
 }
+
