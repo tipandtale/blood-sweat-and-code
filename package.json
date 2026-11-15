@@ -1,0 +1,186 @@
+{
+  "name": "blood-sweat-and-code",
+  "displayName": "Blood, Sweat and Code",
+  "description": "A cheerful pastel-purple coding companion for ARMY. Track sweat (keystrokes), blood (bugs squashed) and code (lines), with pixel hearts, a 7 burst, BTS sounds, and easter eggs. Fan-made by @tipandtale. Not affiliated with HYBE or BTS.",
+  "version": "0.1.0",
+  "publisher": "tipandtale",
+  "icon": "media/icon.png",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "extensionKind": [
+    "ui"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Blood, Sweat and Code",
+      "properties": {
+        "bloodSweatCode.explosions": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show 'boom' effects when deleting."
+        },
+        "bloodSweatCode.blips": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show 'blip' effects when typing and newline animation."
+        },
+        "bloodSweatCode.chars": {
+          "type": "boolean",
+          "default": true,
+          "description": "Overlay the last key/character label with the effects."
+        },
+        "bloodSweatCode.shake": {
+          "type": "boolean",
+          "default": true,
+          "description": "Approximate editor 'shake' by jittering effect decorations."
+        },
+        "bloodSweatCode.shakeAmplitude": {
+          "type": "number",
+          "default": 6,
+          "minimum": 0,
+          "maximum": 32,
+          "description": "Shake amplitude in pixels (uniform in all directions)."
+        },
+        "bloodSweatCode.shakeDecayMs": {
+          "type": "number",
+          "default": 120,
+          "minimum": 20,
+          "maximum": 2000,
+          "description": "How long (ms) shake continues after the last keypress."
+        },
+        "bloodSweatCode.sound": {
+          "type": "boolean",
+          "default": true,
+          "description": "Play sounds (your mp3 clips in media/sound)."
+        },
+        "bloodSweatCode.fireworks": {
+          "type": "boolean",
+          "default": true,
+          "description": "Celebrate milestones (daily goal, every 1000 keystrokes, easter eggs) with fireworks in the sidebar."
+        },
+        "bloodSweatCode.enableStatusBar": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show today's sweat, blood and code in the status bar."
+        },
+        "bloodSweatCode.reducedEffects": {
+          "type": "boolean",
+          "default": false,
+          "description": "Calm mode: no effects and no sound. Your stats still count."
+        },
+        "bloodSweatCode.combo.maxTrail": {
+          "type": "number",
+          "default": 5,
+          "minimum": 0,
+          "description": "Maximum number of trailing decorations to keep per effect type."
+        },
+        "bloodSweatCode.combo.ttl.blipMs": {
+          "type": "number",
+          "default": 400,
+          "minimum": 0,
+          "description": "Lifetime (ms) of a blip trail decoration."
+        },
+        "bloodSweatCode.combo.ttl.boomMs": {
+          "type": "number",
+          "default": 650,
+          "minimum": 0,
+          "description": "Lifetime (ms) of a boom trail decoration."
+        },
+        "bloodSweatCode.combo.ttl.newlineMs": {
+          "type": "number",
+          "default": 350,
+          "minimum": 0,
+          "description": "Lifetime (ms) of a newline trail decoration."
+        },
+        "bloodSweatCode.combo.anim.frameMs": {
+          "type": "number",
+          "default": 50,
+          "minimum": 10,
+          "description": "Animation frame interval in milliseconds for trail updates."
+        },
+        "bloodSweatCode.combo.anim.floatEm": {
+          "type": "number",
+          "default": 0.7,
+          "minimum": 0,
+          "description": "Additional vertical float distance (in em) over lifetime."
+        },
+        "bloodSweatCode.combo.anim.scaleAdd": {
+          "type": "number",
+          "default": 0.6,
+          "minimum": 0,
+          "description": "Additional scale amount added over lifetime."
+        },
+        "bloodSweatCode.dailyGoalLines": {
+          "type": "number",
+          "default": 100,
+          "minimum": 1,
+          "description": "Lines of code to write per day. Hitting it triggers a celebration."
+        }
+      }
+    },
+    "views": {
+      "explorer": [
+        {
+          "id": "bloodSweatCode.panel",
+          "name": "Blood, Sweat and Code",
+          "type": "webview",
+          "icon": "media/icons/icon.svg"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "bloodSweatCode.showPanel",
+        "title": "Blood, Sweat and Code: Show Panel"
+      },
+      {
+        "command": "bloodSweatCode.resetToday",
+        "title": "Blood, Sweat and Code: Reset Today"
+      },
+      {
+        "command": "bloodSweatCode.celebrate",
+        "title": "Blood, Sweat and Code: Celebrate"
+      },
+      {
+        "command": "bloodSweatCode.toggleSound",
+        "title": "Blood, Sweat and Code: Toggle Sound"
+      },
+      {
+        "command": "bloodSweatCode.toggleEffects",
+        "title": "Blood, Sweat and Code: Toggle Effects"
+      },
+      {
+        "command": "bloodSweatCode.toggleCalmMode",
+        "title": "Blood, Sweat and Code: Toggle Calm Mode"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.10",
+    "@types/vscode": "^1.84.0",
+    "typescript": "^5.5.4"
+  },
+  "keywords": [
+    "bts",
+    "army",
+    "fanmade",
+    "kpop",
+    "coding tracker",
+    "daily goal",
+    "pastel"
+  ]
+}
